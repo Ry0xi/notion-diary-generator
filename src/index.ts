@@ -20,7 +20,7 @@ const YYYYMMDDdd = now.format("YYYY月MM日DD(ddd)");
   const alreadyExist = await notion.databases.query({
     database_id: DATABASE_ID,
     filter: {
-      property: "Name",
+      property: "Title",
       title: {
         equals: YYYYMMDDdd,
       },
