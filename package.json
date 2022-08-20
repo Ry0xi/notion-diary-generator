@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "lint": "eslint src && prettier --check src",
+    "deploy": "tsc && node dist/index.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.1.1",
+    "dayjs": "^1.11.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
