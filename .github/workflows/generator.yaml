@@ -1,7 +1,7 @@
 name: Notion Daily Generator
 on:
   schedule:
-    - cron: "0 16 * * *" # 毎日 1 時 0 分(JST)に実行
+    - cron: "30 16 * * *" # 毎日 1 時 30 分(JST)に実行
   workflow_dispatch:
 jobs:
   notion-daily-generator:
