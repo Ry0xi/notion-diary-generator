@@ -14,7 +14,7 @@ const notion = new Client({
 const DATABASE_ID: string = process.env.DATABASE_ID || "";
 const now = dayjs().tz("Asia/Tokyo");
 const YYYYMMDD = now.format("YYYY-MM-DD");
-const YYYYMMDDdd = now.format("YYYY月MM日DD(ddd)");
+const YYYYMMDDdd = now.format("YYYY年MM月DD日(ddd)");
 
 (async () => {
   const alreadyExist = await notion.databases.query({
