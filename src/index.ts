@@ -15,7 +15,7 @@ const YYYYMMDDdd_FORMAT = "YYYY年MM月DD日(ddd)";
 const notion = new Client({
   auth: process.env.NOTION_API_KEY
 });
-const DATABASE_ID: string = process.env.DATABASE_ID || "";
+const DIARY_DATABASE_ID: string = process.env.DIARY_DATABASE_ID || "";
 const now = dayjs().tz("Asia/Tokyo");
 
 // TODO: Diary DBとDone DBで環境変数を設定
@@ -39,7 +39,7 @@ async function generateDiary(date:dayjs.Dayjs): Promise<CreatePageResponse> {
   const propertyNameDate = "Date";
 
   const alreadyExist = await notion.databases.query({
-    database_id: DATABASE_ID,
+    database_id: DIARY_DATABASE_ID,
     filter: {
       property: propertyNameTitle,
       title: {
@@ -55,7 +55,7 @@ async function generateDiary(date:dayjs.Dayjs): Promise<CreatePageResponse> {
   try {
     return await notion.pages.create({
       parent: {
-        database_id: DATABASE_ID,
+        database_id: DIARY_DATABASE_ID,
       },
       properties: {
         [propertyNameTitle]: {
