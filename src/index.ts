@@ -58,5 +58,6 @@ const YYYYMMDDdd = now.format("YYYY年MM月DD日(ddd)");
     console.log("diary generated.");
   } catch (e) {
     console.log(e);
+    process.exit(1);
   }
 })();
