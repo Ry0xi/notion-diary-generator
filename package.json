@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "lint": "eslint src && prettier --check src",
     "deploy": "tsc && node dist/index.js"
   },
   "dependencies": {
